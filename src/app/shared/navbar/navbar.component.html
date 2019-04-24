@@ -1,0 +1,52 @@
+<nav #navbar class="navbar navbar-transparent navbar-absolute">
+    <div class="container-fluid">
+        <div class="navbar-minimize">
+            <button id="minimizeSidebar" class="btn btn-round btn-white btn-fill btn-just-icon">
+                <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+                <i class="material-icons visible-on-sidebar-mini">view_list</i>
+            </button>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{getPath()}}"> {{getTitle()}} </a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end mt-2 mr-3 " id="navigation">
+            <div (window:resize)="onResize($event)">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="material-icons">settings</i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li>
+                                <a (click)="showPriceDetails()" style="cursor: pointer">Tabela de Preços</a>
+                            </li> -->
+                            <li>
+                                <a href="#/report/" target="_blanc" style="cursor: pointer">Gerar relátorio</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- <div class="modal fade generic-modal" id="priceDetailsModal" tabindex="1" role="dialog"
+    aria-labelledby="priceDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close fix-close" data-dismiss="modal" aria-hidden="true">
+                <i class="material-icons">clear</i>
+            </button>
+            <div class="modal-body">
+                <app-price-table></app-price-table>
+            </div>
+        </div>
+    </div>
+</div> -->

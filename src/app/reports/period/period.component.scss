@@ -1,0 +1,60 @@
+html,
+body {
+    background-color: azure;
+}
+
+.options {
+    display: flex;
+}
+
+.search {
+    margin-left: 30px;
+}
+
+img {
+    display: block;
+    margin: 0px auto;
+    width: 100px;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+
+    .options {
+        >* {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+table {
+
+    th,
+    td {
+        font-size: 15px;
+    }
+
+    thead {
+        tr>th {
+            font-weight: 700;
+        }
+    }
+}
+
+.titulo {
+    width: 39.666667%;
+}
+
+.titulo2 {
+    margin: 0;
+}
+
+@media print {
+    .options {
+        opacity: 0;
+    }
+}

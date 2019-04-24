@@ -1,0 +1,26 @@
+<div class="col-sm-12 col-md-12">
+  <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+
+    <!-- <video *ngIf="value?.type === 'VIDEO2D'" class="col-sm-12" controls preload="metadata">
+      <source src="{{ getMediaDownloadUrl(value) }}" type="video/mp4">
+    </video> -->
+
+    <img *ngIf="value?.type === 'PICTURE2D'" class="col-sm-12" src="{{ getMediaDownloadUrl(value) }}">
+
+    <img *ngIf="!value" src="assets/img/image_placeholder.jpg" alt="...">
+
+    <div *ngIf="!value && !isDisabled">
+      <button type="button" class="btn btn-rose btn-round" (click)="selectFile('PICTURE')">{{'ANEXAR'}}
+        {{fileName}}</button>
+      <!-- <button type="button" class="btn btn-rose btn-round" (click)="selectFile('VIDEO')" >{{'select.video'}}</button> -->
+    </div>
+
+    <div *ngIf="value && !isDisabled">
+      <button class="btn btn-rose btn-round" (click)="clearAttachment(file)">
+        <i class="material-icons">perm_media</i> {{'remove'}}
+      </button>
+    </div>
+  </div>
+
+
+  <input *ngIf="!isDisabled" #file name="file" type="file" style="display: none;" (change)="upload(file)">

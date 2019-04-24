@@ -1,0 +1,62 @@
+#loading {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.2);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    
+    transition: opacity 2s linear;
+    -moz-transition: opacity 2s linear; /* Firefox 4 */
+    -webkit-transition: opacity 2s linear; /* Safari and Chrome */
+    -o-transition: opacity 2s linear; /* Opera */
+    -ms-transition: opacity 2s linear; /* Explorer 10 */
+}
+
+
+@keyframes my-animation {        
+    from {
+      opacity : 0.1;
+    }
+    to {
+      opacity : 1;
+    }      
+  }
+  #loading.visible {
+    visibility: visible;
+    opacity: 1;
+    // transition: opacity 2s linear;
+    animation: my-animation 0.5s ease;
+}
+
+
+
+@keyframes my-animation2 {        
+    from {
+      opacity : 1;
+    }
+    to {
+      opacity : 0.2;
+    }      
+  }
+
+  #loading.hidden {
+    visibility: hidden;
+    opacity: 0;
+    // transition: visibility 2s 2s, opacity 2s linear;
+    // -webkit-transition: opacity 1s linear;
+    animation: my-animation2 0.5s ease;
+  }
+
+//   .loading.hidden{
+//     transition: all 1s ease-in-out;
+//     background-color: rgba(255, 0, 0, 0.0);
+//     box-shadow: none;
+//     border: 0px dashed yellow;
+//     border-radius: 0px;
+// }

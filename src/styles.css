@@ -1,0 +1,167 @@
+/* You can add global styles to this file, and also import other style files */
+
+.wrapper{
+    background-color: #4f4f4f;
+}
+
+.mat-tooltip {
+    font-size: 15px !important;
+}
+
+.lang * {
+    color: #fff;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-form-field.fix-y {
+    transform: translateY(-4px);
+}
+
+mat-form-field.busca {
+    position: relative;
+}
+
+mat-form-field.busca i {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    opacity: .6;
+}
+
+p.text-danger {
+    transform: translateY(-16px);
+    font-size: .9em;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+mat-cell.acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+mat-cell.acoes button,
+mat-cell.acoes a {
+    padding: 5px;
+}
+
+mat-header-row * {
+    color: #000 !important;
+}
+
+.modal-title {
+    padding: 10px;
+}
+
+.background {
+    background-color: #D2Ad45;
+}
+
+.centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centralizado>* {
+    margin: 0 5px;
+}
+
+.info {
+    padding-top: 2px;
+}
+
+.info>* {
+    margin: 0;
+}
+
+.info h5 {
+    font-size: 1.1em;
+}
+
+.fix-close {
+    margin: 8px;
+    color: #000 !important;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fix-close::hover {
+    color: #000 !important;
+}
+
+.space {
+    height: 55px;
+}
+
+.space2 {
+    padding-top: 20px;
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    cursor: pointer !important;
+    background-color: rgb(11, 169, 197);
+}
+
+.mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    cursor: pointer !important;
+    background-color: #2ACBF7 !important;
+}
+
+.mat-accent .mat-slider-thumb,
+.mat-accent .mat-slider-thumb-label,
+.mat-accent .mat-slider-track-fill {
+    cursor: pointer !important;
+    background-color: #F5A623 !important;
+}
+
+.color-warning {
+    color: #edaf00;
+}
+
+.color-info {
+    color: #00bcd4;
+}
+
+.color-danger {
+    color: #f44336;
+}
+
+.color-parking {
+    color: #2ACBF7;
+}
+
+.passAlerta {
+    height: 40px;
+}
+
+.change-modal {
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+}
+
+.mat-dialog-container {
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: #D2AD45;
+}
+
+@media print {
+    body img {
+        width: 90%;
+        max-width: 1048px;
+    }
+}

@@ -1,0 +1,67 @@
+<img src="/assets/img/logo/angular2-logo-white.png">
+
+<div class="report-header">
+  <h3>Relatório por periodo</h3>
+  <div class="options">
+    <button (click)="printPage()" class="btn btn-small"><i class="material-icons">print</i></button>
+  </div>
+</div>
+
+<div>
+
+  <div class="col-sm-3">
+    <div class="row">
+      <label class="col-sm-4 label-on-top">Data de inicio</label>
+      <div class="col-sm-7 titulo">
+        <div class="form-group titulo2 label-floating is-empty  form-field">
+          <label class="control-label"></label>
+          <mat-input-container (click)="resultPicker.open()">
+            <input [(ngModel)]="dateStart" [max]="today" disabled name="dateStart" matInput
+              [matDatepicker]="resultPicker" required>
+            <mat-datepicker-toggle matSuffix [for]="resultPicker">
+            </mat-datepicker-toggle>
+            <mat-datepicker disabled="false" #resultPicker [touchUi]="touch">
+            </mat-datepicker>
+          </mat-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="row">
+      <label class="col-sm-4 label-on-top">Data de Fim</label>
+      <div class="col-sm-7 titulo">
+        <div class="form-group titulo2 label-floating is-empty  form-field">
+          <label class="control-label"></label>
+          <mat-input-container (click)="resultPicker2.open()">
+            <input [(ngModel)]="dateEnd" [max]="today" disabled name="dateStart" matInput
+              [matDatepicker]="resultPicker2" required>
+            <mat-datepicker-toggle matSuffix [for]="resultPicker2">
+            </mat-datepicker-toggle>
+            <mat-datepicker disabled="false" #resultPicker2 [touchUi]="touch">
+            </mat-datepicker>
+          </mat-input-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-parking search" [disabled]="!checkDates()"><i class="material-icons">search</i></button>
+
+</div>
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Horário</th>
+      <th scope="col">Lucro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listReport">
+      <td>{{item.period}}</td>
+      <td>R$ {{item.value}}</td>
+    </tr>
+  </tbody>
+</table> -->
