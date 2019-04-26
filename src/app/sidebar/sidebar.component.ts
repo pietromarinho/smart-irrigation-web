@@ -29,6 +29,16 @@ export const ROUTES: RouteInfo[] = [
         title: 'Dashboard',
         type: 'link',
         icontype: 'dashboard'
+    }, {
+        path: '/plant',
+        title: 'Plantas',
+        type: 'sub',
+        icontype: 'person',
+        collapse: 'Plantas',
+        children: [
+            { path: 'registros', title: 'Plantas', ab: 'LP' },
+            { path: 'category', title: 'Categorias', ab: 'LC' },
+        ]
     },
 ];
 @Component({
