@@ -33,6 +33,19 @@
               </mat-form-field>
             </div>
 
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-select [(ngModel)]="obj.plant_type" placeholder="Grupo" name="type" required>
+                  <mat-option value="CRIPTOGAMA">
+                    CRIPTOGAMA
+                  </mat-option>
+                  <mat-option value="FANEROGAMA">
+                    FANEROGAMA
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
           </div>
           <div class="row btn-space">
             <button (click)="clearForm(plantForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
