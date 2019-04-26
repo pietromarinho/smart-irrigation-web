@@ -22,6 +22,17 @@
                 <input matInput #plantName [(ngModel)]="obj.name" placeholder="Nome" name="name" type="text" required>
               </mat-form-field>
             </div>
+
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-select [(ngModel)]="obj.category.id" placeholder="{{getHolderCategory()}}" name="area" required>
+                  <mat-option *ngFor="let category of categories" [value]="category.id">
+                    {{ category.name }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
           </div>
           <div class="row btn-space">
             <button (click)="clearForm(plantForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>

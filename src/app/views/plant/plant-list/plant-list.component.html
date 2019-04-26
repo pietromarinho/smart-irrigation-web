@@ -32,6 +32,12 @@
                   <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
                 </ng-container>
 
+                <ng-container matColumnDef="category">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Categoria
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.category.name }} </mat-cell>
+                </ng-container>
+
                 <ng-container matColumnDef="acoes">
                   <mat-header-cell class="text-right" *matHeaderCellDef> Ações </mat-header-cell>
                   <mat-cell class="text-right acoes" *matCellDef="let item">
