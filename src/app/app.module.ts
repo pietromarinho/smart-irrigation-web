@@ -24,6 +24,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { PeriodComponent } from './reports/period/period.component';
 import { PlantService } from './service/plant/plant.service';
 import { CategoryService } from './service/category/category.service';
+import { PlantacaoService } from './service/plantacao/plantacao.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -102,6 +103,7 @@ export class MaterialModule { }
     LoaderService,
     PlantService,
     CategoryService,
+    PlantacaoService,
   ],
   bootstrap: [AppComponent]
 })

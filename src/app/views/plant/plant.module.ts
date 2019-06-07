@@ -9,6 +9,9 @@ import { MaterialModule } from 'app/app.module';
 import { MdModule } from 'app/md/md.module';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { PlantacaoListComponent } from './plantacao-list/plantacao-list.component';
+import { PlantacaoFormComponent } from './plantacao-form/plantacao-form.component';
+import { EasyAutocompleteModule } from 'app/shared/autocomplete/autocomplete.component';
 
 @NgModule({
   imports: [
@@ -18,7 +21,14 @@ import { CategoryFormComponent } from './category-form/category-form.component';
     ReactiveFormsModule,
     MdModule,
     MaterialModule,
+    EasyAutocompleteModule
   ],
-  declarations: [PlantFormComponent, PlantListComponent, CategoryListComponent, CategoryFormComponent]
+  declarations: [
+    PlantFormComponent,
+    PlantListComponent,
+    CategoryListComponent,
+    CategoryFormComponent,
+    PlantacaoListComponent,
+    PlantacaoFormComponent]
 })
 export class PlantModule { }

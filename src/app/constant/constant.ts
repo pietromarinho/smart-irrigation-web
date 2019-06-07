@@ -5,6 +5,7 @@ export const Constant = {
     FILE: 'file/',
     PLANT: 'plant/',
     CATEGORY: 'category/',
+    PLANTACAO: 'plantacao/',
     MEDIA_TYPE:
     {
         PICTURE_2D: 'PICTURE2D',

@@ -38,6 +38,7 @@ export const ROUTES: RouteInfo[] = [
         children: [
             { path: 'registros', title: 'Plantas', ab: 'LP' },
             { path: 'category', title: 'Categorias', ab: 'LC' },
+            { path: 'plantacao', title: 'Plantações', ab: 'LP' },
         ]
     },
 ];
