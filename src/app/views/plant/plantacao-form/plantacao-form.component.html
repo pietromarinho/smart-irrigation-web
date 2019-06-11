@@ -32,11 +32,11 @@
               [disabled]="!selectPlanta" (click)="addPlant()">Adicionar</button>
           </div>
 
-          <div class="row" *ngIf="plantasAdicionadas < 1">
+          <div class="row" *ngIf="plantasAdicionadas.length < 1">
             <h3 class="text-center"><strong>Não há plantas na plantação</strong></h3>
           </div>
 
-          <div class="row" *ngIf="plantasAdicionadas > 0">
+          <div class="row" *ngIf="plantasAdicionadas.length > 0">
             <ul>
               <li>
                 <div class="row">

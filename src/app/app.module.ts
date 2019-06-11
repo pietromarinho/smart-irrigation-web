@@ -25,6 +25,7 @@ import { PeriodComponent } from './reports/period/period.component';
 import { PlantService } from './service/plant/plant.service';
 import { CategoryService } from './service/category/category.service';
 import { PlantacaoService } from './service/plantacao/plantacao.service';
+import { ArduinoService } from './service/arduino/arduino.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -104,6 +105,7 @@ export class MaterialModule { }
     PlantService,
     CategoryService,
     PlantacaoService,
+    ArduinoService,
   ],
   bootstrap: [AppComponent]
 })

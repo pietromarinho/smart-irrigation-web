@@ -38,8 +38,11 @@ export class PlantacaoFormComponent extends GenericFormComponent<Plantacao, Plan
   }
 
   public initModal(plantacao?: Plantacao): void {
+    this.clearForm(this.plantacaoForm);
+    this.plantasAdicionadas = [];
     if (plantacao) {
       Object.assign(this.obj, plantacao);
+      this.plantasAdicionadas = this.obj.plants;
       this.edit = true;
     } else {
       this.obj = new Plantacao();
@@ -80,11 +83,14 @@ export class PlantacaoFormComponent extends GenericFormComponent<Plantacao, Plan
     if (this.selectPlanta) {
       const found = this.plantasAdicionadas.find((planta) => planta.id === this.selectPlanta.id);
       if (found) {
+        this.selectedPlanta = '';
         ToastService.show('Planta já adicionada a plantação', MessageType.WARNING);
       } else {
+        this.selectedPlanta = '';
         this.plantasAdicionadas.push(this.selectPlanta);
       }
     }
+    this.selectedPlanta = '';
   }
 
   getHolderPlant(): string {
@@ -99,6 +105,10 @@ export class PlantacaoFormComponent extends GenericFormComponent<Plantacao, Plan
     if (this.plantasAdicionadas[index].id) {
       this.plantasAdicionadas.splice(index, 1);
     }
+  }
+
+  beforeSave() {
+    this.obj.plants = this.plantasAdicionadas;
   }
 
   closeModal(): void {

@@ -6,6 +6,7 @@ export const Constant = {
     PLANT: 'plant/',
     CATEGORY: 'category/',
     PLANTACAO: 'plantacao/',
+    ARDUINO: 'arduino/',
     MEDIA_TYPE:
     {
         PICTURE_2D: 'PICTURE2D',
