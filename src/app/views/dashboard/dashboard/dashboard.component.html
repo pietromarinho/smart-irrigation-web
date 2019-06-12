@@ -1,12 +1,42 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="card">
-      <div class="card-content">
-        <button class="btn btn-simple btn-info btn-icon edit" matTooltip="LIGAR/DESLIGAR" [matTooltipPosition]="'left'"
-          (click)="ligaDesliga()">
-          <i class="material-icons">edit</i>
-        </button>
+
+    <div class="row" *ngIf="plantacoes.length < 1">
+      <h5 class="text-center color-warning">Não há plantações pra irrigar!</h5>
+    </div>
+
+    <div class="row" *ngIf="plantacoes.length > 0">
+      <div class="col-md-3" *ngFor="let plantacao of plantacoes">
+        <div class="card">
+          <div class="card-header card-header-icon" data-background-color="blue">
+            <span class="material-icons">local_florist</span>
+          </div>
+          <div class="card-content">
+            <h5 class="card-title">
+              <strong>{{plantacao.name}}</strong>
+            </h5>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="info">
+                  <label>Plantas</label>
+                  <h5>
+                    {{getQntPlantas(plantacao.plants)}}
+                  </h5>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="info">
+                  <label>Intervalo</label>
+                  <h5>
+                    00:10
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </div>
 </div>
