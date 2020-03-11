@@ -8,6 +8,14 @@ import { EasyAutocompleteModule } from 'app/shared/autocomplete/autocomplete.com
 import { DentistaListComponent } from './dentista-list/dentista-list.component';
 import { DentistaFormComponent } from './dentista-form/dentista-form.component';
 import { CadastroRouter } from './cadastro.routing';
+import { FuncionarioListComponent } from './funcionario-list/funcionario-list.component';
+import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
+import { ClienteListComponent } from './cliente-list/cliente-list.component';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
+import { ProdutoListComponent } from './produto-list/produto-list.component';
+import { ProdutoFormComponent } from './produto-form/produto-form.component';
+import { ConsultaListComponent } from './consulta-list/consulta-list.component';
+import { ConsultaFormComponent } from './consulta-form/consulta-form.component';
 
 @NgModule({
   imports: [
@@ -21,7 +29,15 @@ import { CadastroRouter } from './cadastro.routing';
   ],
   declarations: [
     DentistaListComponent,
-    DentistaFormComponent
+    DentistaFormComponent,
+    FuncionarioListComponent,
+    FuncionarioFormComponent,
+    ClienteListComponent,
+    ClienteFormComponent,
+    ProdutoListComponent,
+    ProdutoFormComponent,
+    ConsultaListComponent,
+    ConsultaFormComponent
   ]
 })
 export class CadastroModule { }

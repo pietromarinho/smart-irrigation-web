@@ -4,6 +4,10 @@ export const Constant = {
     BASE_URL: WS_URL + 'rest/',
     FILE: 'file/',
     DENTISTA: 'dentista/',
+    FUNCIONARIO: 'funcionario/',
+    CLIENTE: 'cliente/',
+    PRODUTO: 'produto/',
+    CONSULTA: 'consulta/',
     MEDIA_TYPE:
     {
         PICTURE_2D: 'PICTURE2D',

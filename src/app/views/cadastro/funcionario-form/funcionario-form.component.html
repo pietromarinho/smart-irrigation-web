@@ -1,0 +1,72 @@
+<div class="modal fade generic-modal" id="funcionarioModal" tabindex="-1" role="dialog"
+  aria-labelledby="funcionarioModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Funcionário</strong>
+        <strong *ngIf="!edit">Novo Funcionário</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #funcionarioForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioName [(ngModel)]="obj.name" placeholder="Nome" name="name" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioTelefone [(ngModel)]="obj.telefone" placeholder="Telefone" name="telefone"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioMatricula [(ngModel)]="obj.matricula" placeholder="Matricula"
+                  name="matricula" type="text" required>
+              </mat-form-field>
+            </div>
+            <h5 class="modal-title" class="col-sm-12">
+              Endereço
+            </h5>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioRua [(ngModel)]="obj.endereco.rua" placeholder="Rua" name="rua" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioNumero [(ngModel)]="obj.endereco.numero" placeholder="Numero" name="numero"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #funcionarioBairro [(ngModel)]="obj.endereco.bairro" placeholder="Bairro" name="bairro"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(funcionarioForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="save()" type="submit" class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!funcionarioForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="modal fade generic-modal" id="clienteModal" tabindex="-1" role="dialog"
+  aria-labelledby="clienteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Cliente</strong>
+        <strong *ngIf="!edit">Novo Cliente</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #clienteForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteName [(ngModel)]="obj.name" placeholder="Nome" name="name" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteCPF [(ngModel)]="obj.cpf" placeholder="CPF" name="cpf" type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteTelefone [(ngModel)]="obj.telefone" placeholder="Telefone" name="telefone"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteEmail [(ngModel)]="obj.email" placeholder="Email" name="email" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteSexo [(ngModel)]="obj.sexo" placeholder="Sexo" name="sexo" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <h5 class="modal-title" class="col-sm-12">
+              Endereço
+            </h5>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteRua [(ngModel)]="obj.endereco.rua" placeholder="Rua" name="rua" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteNumero [(ngModel)]="obj.endereco.numero" placeholder="Numero" name="numero"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #clienteBairro [(ngModel)]="obj.endereco.bairro" placeholder="Bairro" name="bairro"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(clienteForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="save()" type="submit" class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!clienteForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="modal fade generic-modal" id="produtoModal" tabindex="-1" role="dialog" aria-labelledby="produtoModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Produto</strong>
+        <strong *ngIf="!edit">Novo Produto</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #produtoForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoName [(ngModel)]="obj.name" placeholder="Nome" name="name" type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoQTD [(ngModel)]="obj.qtd" placeholder="QTD" name="qtd" type="number" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoDataVencimento [(ngModel)]="obj.dataVd" placeholder="Data de Vencimento"
+                  name="dataVd" type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoDescricao [(ngModel)]="obj.descricao" placeholder="Descrição" name="descricao"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoPreco [(ngModel)]="obj.preco" placeholder="Preço" name="preco" type="number"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #produtoCodBar [(ngModel)]="obj.codBar" placeholder="Código de Barras" name="codBar"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(produtoForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="save()" type="submit" class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!produtoForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

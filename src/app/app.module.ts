@@ -23,6 +23,10 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { PeriodComponent } from './reports/period/period.component';
 import { DentistaService } from './service/dentista/dentista.service';
+import { FuncionarioService } from './service/funcionario/funcionario.service';
+import { ProdutoService } from './service/produto/produto.service';
+import { ClienteService } from './service/cliente/cliente.service';
+import { ConsultaService } from './service/consulta/consulta.service';
 
 export function httpFactory(xhrBackend: XHRBackend, requestOptions: RequestOptions, loaderService: LoaderService): Http {
   return new InterceptedHttp(xhrBackend, requestOptions, loaderService);
@@ -99,7 +103,11 @@ export class MaterialModule { }
     ToastService,
     ErrorService,
     LoaderService,
-    DentistaService
+    DentistaService,
+    FuncionarioService,
+    ClienteService,
+    ProdutoService,
+    ConsultaService
   ],
   bootstrap: [AppComponent]
 })

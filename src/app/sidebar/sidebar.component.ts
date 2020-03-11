@@ -36,7 +36,11 @@ export const ROUTES: RouteInfo[] = [
         icontype: 'person',
         collapse: 'Cadastros',
         children: [
-            { path: 'dentista', title: 'Cadastros', ab: '' },
+            { path: 'consulta', title: 'Consultas', ab: '' },
+            { path: 'dentista', title: 'Dentistas', ab: '' },
+            { path: 'funcionario', title: 'Funcionários', ab: '' },
+            { path: 'cliente', title: 'Clientes', ab: '' },
+            { path: 'produto', title: 'Produtos', ab: '' },
         ]
     },
 ];
