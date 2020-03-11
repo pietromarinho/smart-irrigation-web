@@ -25,11 +25,21 @@
 
             <div class="example-container">
 
-              <mat-table #table [dataSource]="dataSource" matSort>
+              <mat-table #table [dataSource]="consultas" matSort>
                 <ng-container matColumnDef="name">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header> Nome
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Código
                   </mat-header-cell>
-                  <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.id }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="paciente">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Paciente
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.paciente }} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="data">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Data
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let item"> {{ item.dataConsulta }} às {{ item.horario }} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="acoes">

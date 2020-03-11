@@ -5,6 +5,7 @@ export class Consulta extends BaseModel {
     paciente: string;
     dataConsulta: string;
     dentista: Dentista;
+    horario: string;
 
     constructor() {
         super();

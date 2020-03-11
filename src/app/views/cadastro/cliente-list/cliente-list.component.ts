@@ -15,6 +15,14 @@ export class ClienteListComponent extends GenericListComponent<Cliente, ClienteS
 
   @ViewChild('clienteModal') clienteModal: ClienteFormComponent;
 
+  clientes: Cliente[] = [
+    { id: '1', name: 'Diego', cpf: '789', telefone: '111111111', email: 'Diego@email.com', sexo: 'masculino', endereco: { rua: 'Silva Ramos', numero: '123', bairro: 'Centro', } },
+    { id: '2', name: 'Lucas', cpf: '456', telefone: '111111111', email: 'Lucas@email.com', sexo: 'masculino', endereco: { rua: 'Silva Ramos', numero: '124', bairro: 'Centro', } },
+    { id: '3', name: 'Luan', cpf: '123', telefone: '111111111', email: 'Luan@email.com', sexo: 'masculino', endereco: { rua: 'Silva Ramos', numero: '125', bairro: 'Centro', } },
+    { id: '4', name: 'Lohan', cpf: '987', telefone: '111111111', email: 'Lohan@email.com', sexo: 'masculino', endereco: { rua: 'Silva Ramos', numero: '126', bairro: 'Centro', } },
+    { id: '5', name: 'Bruno', cpf: '654', telefone: '111111111', email: 'Bruno@email.com', sexo: 'masculino', endereco: { rua: 'Silva Ramos', numero: '127', bairro: 'Centro', } }
+  ]
+
   constructor(
     service: ClienteService,
     router: Router,

@@ -23,6 +23,32 @@
                   name="paciente" type="text" required>
               </mat-form-field>
             </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-select [(ngModel)]="obj.dentista.id" placeholder="Dentista" name="dentista" required>
+                  <mat-option *ngFor="let dentista of dentistas" [value]="dentista.id">
+                    {{ dentista.name }} - {{ dentista.cro }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput [min]="minDate" [formControl]="data" name="date" [matDatepicker]="dp3"
+                  placeholder="Data" placeholder="Data" [disabled]="true">
+                <mat-datepicker-toggle matSuffix [for]="dp3" required></mat-datepicker-toggle>
+                <mat-datepicker #dp3 [disabled]="false" required></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <mat-select [(ngModel)]="obj.horario" placeholder="Horario" name="horario" required>
+                  <mat-option *ngFor="let horario of horarios" [value]="horario">
+                    {{ horario }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
           <div class="row btn-space">
             <button (click)="clearForm(consultaForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>

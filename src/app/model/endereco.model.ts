@@ -1,6 +1,4 @@
-import { BaseModel } from './base.model';
-
-export class Endereco extends BaseModel {
+export class Endereco {
     rua: string;
     numero: string;
     bairro: string;

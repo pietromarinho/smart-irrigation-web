@@ -16,6 +16,14 @@ export class FuncionarioListComponent extends GenericListComponent<Funcionario, 
 
   @ViewChild('funcionarioModal') funcionarioModal: FuncionarioFormComponent;
 
+  funcionarios: Funcionario[] = [
+    { id: '1', name: 'Diego', telefone: '111111111', matricula: '12', endereco: { rua: 'Silva Ramos', numero: '123', bairro: 'Centro', } },
+    { id: '2', name: 'Lucas', telefone: '111111111', matricula: '34', endereco: { rua: 'Silva Ramos', numero: '124', bairro: 'Centro', } },
+    { id: '3', name: 'Luan', telefone: '111111111', matricula: '56', endereco: { rua: 'Silva Ramos', numero: '125', bairro: 'Centro', } },
+    { id: '4', name: 'Lohan', telefone: '111111111', matricula: '78', endereco: { rua: 'Silva Ramos', numero: '126', bairro: 'Centro', } },
+    { id: '5', name: 'Bruno', telefone: '111111111', matricula: '90', endereco: { rua: 'Silva Ramos', numero: '127', bairro: 'Centro', } }
+  ]
+
   constructor(
     service: FuncionarioService,
     router: Router,
