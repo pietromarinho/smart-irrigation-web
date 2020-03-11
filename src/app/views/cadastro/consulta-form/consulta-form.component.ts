@@ -44,7 +44,8 @@ export class ConsultaFormComponent extends GenericFormComponent<Consulta, Consul
   public initModal(consulta?: Consulta): void {
     if (consulta) {
       Object.assign(this.obj, consulta);
-      this.data.setValue(consulta.dataConsulta)
+      this.data = new FormControl(consulta.dataConsulta);
+      
       this.edit = true;
     } else {
       this.obj = new Consulta();

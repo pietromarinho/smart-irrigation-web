@@ -54,7 +54,7 @@
             <button (click)="clearForm(consultaForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
 
             <button (click)="save()" type="submit" class='btn btn-finish btn-fill btn-round btn-parking pull-right'
-              [disabled]="!consultaForm.form.valid">Salvar</button>
+              [disabled]="!consultaForm.form.valid || !data.value">Salvar</button>
 
             <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
           </div>
