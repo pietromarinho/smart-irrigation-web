@@ -3,7 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from 'app/model/cliente.model';
 import { ClienteService } from 'app/service/cliente/cliente.service';
+import { MessageType, SwalType } from 'app/service/toast-notification-service/message-type.enum';
 import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
+import swal from 'sweetalert2';
 import { ClienteFormComponent } from '../cliente-form/cliente-form.component';
 
 @Component({
@@ -34,6 +36,17 @@ export class ClienteListComponent extends GenericListComponent<Cliente, ClienteS
 
   showModal(cliente?: Cliente): void {
     this.clienteModal.initModal(cliente);
+  }
+
+  deleteItem() {
+    swal(this.swalContent(SwalType.DELETE)
+    ).then(function () {
+      this.delete();
+    }.bind(this)).catch(swal.noop);
+  }
+
+  delete() {
+    this.toast(this.recordDeletedMsg, MessageType.SUCCESS);
   }
 
 }

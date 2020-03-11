@@ -2,10 +2,13 @@ import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Consulta } from 'app/model/consulta.model';
-import { ConsultaService } from 'app/service/consulta/consulta.service';
-import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
-import { ConsultaFormComponent } from '../consulta-form/consulta-form.component';
 import { Dentista } from 'app/model/dentista.model';
+import { ConsultaService } from 'app/service/consulta/consulta.service';
+import { MessageType, SwalType } from 'app/service/toast-notification-service/message-type.enum';
+import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
+import swal from 'sweetalert2';
+import { ConsultaFormComponent } from '../consulta-form/consulta-form.component';
+
 @Component({
   selector: 'app-consulta-list',
   templateUrl: './consulta-list.component.html',
@@ -46,6 +49,17 @@ export class ConsultaListComponent extends GenericListComponent<Consulta, Consul
 
   showModal(consulta?: Consulta): void {
     this.consultaModal.initModal(consulta);
+  }
+
+  deleteItem() {
+    swal(this.swalContent(SwalType.DELETE)
+    ).then(function () {
+      this.delete();
+    }.bind(this)).catch(swal.noop);
+  }
+
+  delete() {
+    this.toast(this.recordDeletedMsg, MessageType.SUCCESS);
   }
 
 }

@@ -1,10 +1,12 @@
+import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Funcionario } from 'app/model/funcionario.model';
 import { FuncionarioService } from 'app/service/funcionario/funcionario.service';
+import { MessageType, SwalType } from 'app/service/toast-notification-service/message-type.enum';
 import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
+import swal from 'sweetalert2';
 import { FuncionarioFormComponent } from '../funcionario-form/funcionario-form.component';
-import { Location } from '@angular/common';
 
 
 @Component({
@@ -35,5 +37,16 @@ export class FuncionarioListComponent extends GenericListComponent<Funcionario, 
 
   showModal(funcionario?: Funcionario): void {
     this.funcionarioModal.initModal(funcionario);
+  }
+
+  deleteItem() {
+    swal(this.swalContent(SwalType.DELETE)
+    ).then(function () {
+      this.delete();
+    }.bind(this)).catch(swal.noop);
+  }
+
+  delete() {
+    this.toast(this.recordDeletedMsg, MessageType.SUCCESS);
   }
 }

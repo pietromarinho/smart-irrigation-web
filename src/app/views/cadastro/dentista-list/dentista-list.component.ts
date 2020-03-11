@@ -3,7 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Dentista } from 'app/model/dentista.model';
 import { DentistaService } from 'app/service/dentista/dentista.service';
+import { MessageType, SwalType } from 'app/service/toast-notification-service/message-type.enum';
 import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
+import swal from 'sweetalert2';
 import { DentistaFormComponent } from '../dentista-form/dentista-form.component';
 
 @Component({
@@ -34,6 +36,17 @@ export class DentistaListComponent extends GenericListComponent<Dentista, Dentis
 
   showModal(dentista?: Dentista): void {
     this.dentistaModal.initModal(dentista);
+  }
+
+  deleteItem() {
+    swal(this.swalContent(SwalType.DELETE)
+    ).then(function () {
+      this.delete();
+    }.bind(this)).catch(swal.noop);
+  }
+
+  delete() {
+    this.toast(this.recordDeletedMsg, MessageType.SUCCESS);
   }
 
 }

@@ -3,7 +3,9 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'app/model/produto.model';
 import { ProdutoService } from 'app/service/produto/produto.service';
+import { MessageType, SwalType } from 'app/service/toast-notification-service/message-type.enum';
 import { GenericListComponent } from 'app/views/generic/generic-list/generic-list.component';
+import swal from 'sweetalert2';
 import { ProdutoFormComponent } from '../produto-form/produto-form.component';
 
 @Component({
@@ -34,6 +36,17 @@ export class ProdutoListComponent extends GenericListComponent<Produto, ProdutoS
 
   showModal(produto?: Produto): void {
     this.produtoModal.initModal(produto);
+  }
+
+  deleteItem() {
+    swal(this.swalContent(SwalType.DELETE)
+    ).then(function () {
+      this.delete();
+    }.bind(this)).catch(swal.noop);
+  }
+
+  delete() {
+    this.toast(this.recordDeletedMsg, MessageType.SUCCESS);
   }
 
 }
