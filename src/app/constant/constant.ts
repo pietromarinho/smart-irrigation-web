@@ -3,10 +3,7 @@ export const WS_URL = 'http://localhost:7500/irrigation/';
 export const Constant = {
     BASE_URL: WS_URL + 'rest/',
     FILE: 'file/',
-    PLANT: 'plant/',
-    CATEGORY: 'category/',
-    PLANTACAO: 'plantacao/',
-    ARDUINO: 'arduino/',
+    DENTISTA: 'dentista/',
     MEDIA_TYPE:
     {
         PICTURE_2D: 'PICTURE2D',

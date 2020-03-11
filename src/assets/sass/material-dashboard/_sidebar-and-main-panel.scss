@@ -256,16 +256,15 @@
         }
 
         .simple-text {
-            text-transform: uppercase;
-            padding: 10px 0px 0px 50px;
+            padding: 0;
             display: block;
             font-size: $font-size-large;
             color: $black-color;
             text-align: center;
-            white-space: nowrap;
             font-weight: $font-weight-default;
             line-height: 30px;
             overflow: hidden;
+            font-size: 15px;
             @extend .animation-transition-general;
         }
 

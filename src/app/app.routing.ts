@@ -12,8 +12,8 @@ export const AppRoutes: Routes = [
                 path: 'dashboard',
                 loadChildren: './views/dashboard/dashboard.module#DashboardModule',
             }, {
-                path: 'plant',
-                loadChildren: './views/plant/plant.module#PlantModule'
+                path: 'cadastro',
+                loadChildren: './views/cadastro/cadastro.module#CadastroModule'
             },
         ]
     },

@@ -1,0 +1,89 @@
+<div class="modal fade generic-modal" id="dentistaModal" tabindex="-1" role="dialog"
+  aria-labelledby="dentistaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="card-header card-header-icon" data-background-color="parking">
+        <i *ngIf="edit" class="material-icons">edit</i>
+        <i *ngIf="!edit" class="material-icons">add</i>
+      </div>
+      <h5 class="modal-title">
+        <strong *ngIf="edit">Editar Dentista</strong>
+        <strong *ngIf="!edit">Novo Dentista</strong>
+      </h5>
+
+      <div class="modal-body">
+
+        <form class="form-horizontal" #dentistaForm="ngForm">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaName [(ngModel)]="obj.name" placeholder="Nome" name="name" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaCRO [(ngModel)]="obj.cro" placeholder="CRO" name="cro" type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaTelefone [(ngModel)]="obj.telefone" placeholder="Telefone" name="telefone"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaEmail [(ngModel)]="obj.email" placeholder="Email" name="email" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaMatricula [(ngModel)]="obj.matricula" placeholder="Matricula" name="matricula" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaSexo [(ngModel)]="obj.sexo" placeholder="Sexo" name="sexo" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <h5 class="modal-title">
+              Endereço
+            </h5>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaRua [(ngModel)]="obj.endereco.rua" placeholder="Rua" name="rua" type="text"
+                  required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaNumero [(ngModel)]="obj.endereco.numero" placeholder="Numero" name="numero"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <mat-form-field>
+                <input matInput #dentistaBairro [(ngModel)]="obj.endereco.bairro" placeholder="Bairro" name="bairro"
+                  type="text" required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row btn-space">
+            <button (click)="clearForm(dentistaForm)" type="button" class='btn btn-round  pull-left'>Limpar</button>
+
+            <button (click)="save()" type="submit" class='btn btn-finish btn-fill btn-round btn-parking pull-right'
+              [disabled]="!dentistaForm.form.valid">Salvar</button>
+
+            <button (click)="closeModal()" type="button" class='btn btn-round  pull-right'>Voltar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

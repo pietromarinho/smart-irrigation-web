@@ -30,15 +30,13 @@ export const ROUTES: RouteInfo[] = [
         type: 'link',
         icontype: 'dashboard'
     }, {
-        path: '/plant',
-        title: 'Plantas',
+        path: '/cadastro',
+        title: 'Cadastros',
         type: 'sub',
         icontype: 'person',
-        collapse: 'Plantas',
+        collapse: 'Cadastros',
         children: [
-            { path: 'registros', title: 'Plantas', ab: 'LP' },
-            { path: 'category', title: 'Categorias', ab: 'LC' },
-            { path: 'plantacao', title: 'Plantações', ab: 'LP' },
+            { path: 'dentista', title: 'Cadastros', ab: '' },
         ]
     },
 ];

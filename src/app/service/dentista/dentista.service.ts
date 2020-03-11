@@ -4,15 +4,15 @@ import { Http } from '@angular/http';
 import { ActivatedRoute } from '@angular/router';
 import { ErrorService } from '../toast-notification-service/error-service/error.service';
 import { Constant } from 'app/constant/constant';
-import { Category } from 'app/model/category.model';
+import { Dentista } from 'app/model/dentista.model';
 
 @Injectable()
-export class CategoryService extends CrudService<Category> {
+export class DentistaService extends CrudService<Dentista> {
 
   constructor(http: Http,
     public activatedRoute: ActivatedRoute,
     errorHandler?: ErrorService) {
-    super(http, Constant.CATEGORY, errorHandler, activatedRoute);
+    super(http, Constant.DENTISTA, errorHandler, activatedRoute);
   }
 
 }
